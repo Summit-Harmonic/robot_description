@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
-project(robot_description NONE)
+project(robot_description)
 
 find_package(ament_cmake REQUIRED)
 ament_package_xml()
 
 install(
-    DIRECTORY launch meshes urdf robots
+    DIRECTORY config launch meshes urdf robots
     DESTINATION share/${PROJECT_NAME})
+
+#ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/hooks/${PROJECT_NAME}.dsv.in")
+#ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/hooks/${PROJECT_NAME}.sh.in")
 
 ament_package()
