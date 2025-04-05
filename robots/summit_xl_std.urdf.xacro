@@ -92,7 +92,6 @@
   </xacro:sensor_imu>
 
   <!-- Gazebo ros control plugins -->
-  <xacro:arg name="config_controllers" default="$(find robot_description)/config/summit_controllers.yaml"/>
   <xacro:arg name="update_rate" default="100"/>
   <xacro:include filename="$(find robot_description)/urdf/ros2_control.urdf.xacro"/>
   <xacro:ros2_control/>
