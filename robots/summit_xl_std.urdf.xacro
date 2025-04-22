@@ -91,8 +91,7 @@
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
   </xacro:sensor_imu>
 
-  <!-- Gazebo ros control plugins -->
-  <xacro:arg name="update_rate" default="100"/>
-  <xacro:include filename="$(find robot_description)/urdf/ros2_control.urdf.xacro"/>
-  <xacro:ros2_control/>
+    <!-- Gazebo ROS control plugins -->
+    <xacro:include filename="$(find robot_description)/urdf/ros2_control.urdf.xacro"/>
+    <xacro:ros2_control/>
 </robot>
