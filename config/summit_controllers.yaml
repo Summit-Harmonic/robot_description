@@ -5,7 +5,7 @@
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-/**/robotnik_base_controller:
+/**/robotnik_base_control:
   ros__parameters:
     type: diff_drive_controller/DiffDriveController
     left_wheel_names: ["front_left_wheel_joint", "rear_left_wheel_joint"]
