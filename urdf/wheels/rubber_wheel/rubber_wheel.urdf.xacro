@@ -50,10 +50,12 @@
             <origin xyz="0 0 0" rpy="0 0 0" />
           </xacro:unless>
           <xacro:if value="${reflect}">
-            <origin xyz="0 0 0" rpy="${M_PI} 0 0" />
+            <origin xyz="0 0 0" rpy="${M_PI/2} 0 0" />
+            <!-- <origin xyz="0 0 0" rpy="${M_PI} 0 0" /> -->
           </xacro:if>        
           <geometry>
-						<mesh filename="package://${mesh_file}.stl" />
+            <cylinder length="${rubber_wheel_width}" radius="${rubber_wheel_radius}" />
+						<!-- <mesh filename="package://${mesh_file}.stl" /> -->
         </geometry>
       </collision>
       <inertial>

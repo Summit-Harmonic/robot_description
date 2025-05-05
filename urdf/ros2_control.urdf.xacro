@@ -2,6 +2,12 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
   <xacro:macro name="ros2_control">
       <gazebo>
+        <plugin
+          filename="gz-sim-odometry-publisher-system"
+          name="gz::sim::systems::OdometryPublisher">
+          <odom_frame>odom</odom_frame>
+          <robot_base_frame>base_footprint</robot_base_frame>
+        </plugin>
         <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
           <ros>
             <namespace>$(arg robot_ns)</namespace>
