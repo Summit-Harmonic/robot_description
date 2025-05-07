@@ -9,7 +9,7 @@
               izz="${m*(3*r*r+h*h)/12}" />
   </xacro:macro>
 
-  <xacro:macro name="rubber_wheel" params="prefix parent *origin reflect hq rubber_wheel_radius:=0.11 rubber_wheel_width:=0.15 rubber_wheel_mass:=6.5
+  <xacro:macro name="rubber_wheel" params="prefix parent *origin reflect hq rubber_wheel_radius:=0.115 rubber_wheel_width:=0.15 rubber_wheel_mass:=6.5
                                           mesh_file:=robot_description/meshes/wheels/rubber_wheel/rubber_wheel_right">
 
 <!--WHEEL TIRE -->
