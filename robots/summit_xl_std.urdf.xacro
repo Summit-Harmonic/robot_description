@@ -75,7 +75,7 @@
   </xacro:if>
 
   <!-- SENSORS -->
-  <xacro:sensor_robosense_helios node_namespace="$(arg robot_ns)" frame_prefix="$(arg prefix)front_laser_" parent="$(arg prefix)base_link" simulation="true" gpu="true">
+  <xacro:sensor_robosense_helios node_namespace="$(arg robot_ns)" frame_prefix="$(arg prefix)front_laser" parent="$(arg prefix)base_link" simulation="true" gpu="true">
       <origin xyz="-0.11808 0.0 0.38509" rpy="0 0 0"/>
   </xacro:sensor_robosense_helios>
   <xacro:sensor_stereolabs_zed2 node_namespace="$(arg robot_ns)" frame_prefix="$(arg prefix)front_camera_" parent="$(arg prefix)base_link" simulation="true">
