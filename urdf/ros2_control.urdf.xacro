@@ -12,7 +12,7 @@
           <ros>
             <namespace>$(arg robot_ns)</namespace>
           </ros>
-          <parameters>$(find gz_ros2_control_demos)/config/diff_drive_controller.yaml</parameters>
+          <parameters>$(find robotnik_description)/config/summit_controllers.yaml</parameters>
         </plugin>
       </gazebo>
       <ros2_control name="robotnik_base_hw" type="system">

@@ -2,8 +2,8 @@
 <robot name="summit_xl" xmlns:xacro="http://wiki.ros.org/xacro">
 
 
-	<xacro:include filename="$(find robot_description)/urdf/bases/gazebo/robot_base.gazebo.xacro" />
-	<xacro:include filename="$(find robot_description)/urdf/wheels/rubber_wheel/rubber_wheel.urdf.xacro" />
+	<xacro:include filename="$(find robotnik_description)/urdf/bases/gazebo/robot_base.gazebo.xacro" />
+	<xacro:include filename="$(find robotnik_description)/urdf/wheels/rubber_wheel/rubber_wheel.urdf.xacro" />
 
 	<xacro:macro name="summit_hm_base" params="prefix publish_bf hq">
 
@@ -51,12 +51,12 @@
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<xacro:if value="${hq}">
 			<geometry>
-				<mesh filename="package://robot_description/meshes/bases/summit_hm_body.dae"/>
+				<mesh filename="package://robotnik_description/meshes/bases/summit_hm_body.dae"/>
 			</geometry>
 			</xacro:if>
 			<xacro:unless value="${hq}">
 			<geometry>
-				<mesh filename="package://robot_description/meshes/bases/summit_hm_body.dae"/>
+				<mesh filename="package://robotnik_description/meshes/bases/summit_hm_body.dae"/>
 			</geometry>
 			</xacro:unless>
 			<material name="darkgrey">
@@ -66,7 +66,7 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0 " />
 			<geometry>
-				<mesh filename="package://robot_description/meshes/bases/summit_hm_body.stl"/>
+				<mesh filename="package://robotnik_description/meshes/bases/summit_hm_body.stl"/>
 			</geometry>
 		</collision>
 		</link>

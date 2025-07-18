@@ -11,10 +11,10 @@
     <!-- First we import all posible elements defined in the urdf.xacro files. All these elements are defined as macro:xacros -->
 
     <!-- Import rbvogui base elements-->
-    <xacro:include filename="$(find robot_description)/urdf/bases/rbvogui_xl_base.urdf.xacro" />
+    <xacro:include filename="$(find robotnik_description)/urdf/bases/rbvogui_xl_base.urdf.xacro" />
 
     <!-- Import rbvogui wheels -->
-    <xacro:include filename="$(find robot_description)/urdf/wheels/motor_wheel/rbvogui_motor_wheel_xl.urdf.xacro" />
+    <xacro:include filename="$(find robotnik_description)/urdf/wheels/motor_wheel/rbvogui_motor_wheel_xl.urdf.xacro" />
 
     <!-- Import ur arm -->
     <xacro:include filename="$(find ur_description)/urdf/inc/ur10e_macro.xacro" />
@@ -26,14 +26,14 @@
     <xacro:include filename="$(find ewellix_description)/urdf/ewellix_lift_900mm.urdf.xacro" />
 
     <!-- Structures -->
-    <xacro:include filename="$(find robot_description)/urdf/structures/rbvogui_chassis/top_cover.urdf.xacro" /> 
-    <xacro:include filename="$(find robot_description)/urdf/structures/sensor_support/gps_mast.urdf.xacro" /> 
+    <xacro:include filename="$(find robotnik_description)/urdf/structures/rbvogui_chassis/top_cover.urdf.xacro" /> 
+    <xacro:include filename="$(find robotnik_description)/urdf/structures/sensor_support/gps_mast.urdf.xacro" /> 
 
     <!-- Import sick support -->
-    <xacro:include filename="$(find robot_description)/urdf/structures/rbvogui_chassis/sick_support.urdf.xacro" />
+    <xacro:include filename="$(find robotnik_description)/urdf/structures/rbvogui_chassis/sick_support.urdf.xacro" />
 
     <!-- Import sick protector -->
-    <xacro:include filename="$(find robot_description)/urdf/structures/rbvogui_chassis/sick_protector.urdf.xacro" />
+    <xacro:include filename="$(find robotnik_description)/urdf/structures/rbvogui_chassis/sick_protector.urdf.xacro" />
 
     <!-- Import all available sensors -->
     <xacro:include filename="$(find robotnik_sensors)/urdf/all_sensors.urdf.xacro" />
@@ -56,7 +56,7 @@
     <xacro:property name="publish_bf" value="true" />
 
     <xacro:arg name="prefix" default="robot_" />
-    <xacro:arg name="kinematics_config" default="$(find robot_description)/robot_control/config/calibration/ur10e_default.yaml"/>
+    <xacro:arg name="kinematics_config" default="$(find robotnik_description)/robot_control/config/calibration/ur10e_default.yaml"/>
     <xacro:arg name="gpu" default="false" />
     <xacro:arg name="load_kinematics_file" default="false" />
 
@@ -95,8 +95,8 @@
         <!-- UR-10e ARM -->
         <xacro:if value="${load_kinematics_file}">
             <xacro:ur10e_robot prefix="${prefix}arm_" 
-                        kinematics_parameters_file="$(find robot_description)/robot_control/config/calibration/ur10_calibration.yaml"
-                        joint_limits_parameters_file="$(find robot_description)/robot_control/config/calibration/ur10_joint_limits.yaml">
+                        kinematics_parameters_file="$(find robotnik_description)/robot_control/config/calibration/ur10_calibration.yaml"
+                        joint_limits_parameters_file="$(find robotnik_description)/robot_control/config/calibration/ur10_joint_limits.yaml">
 			</xacro:ur10e_robot>
 		</xacro:if>
 

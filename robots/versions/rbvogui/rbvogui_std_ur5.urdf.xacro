@@ -12,10 +12,10 @@
     <!-- First we import all posible elements defined in the urdf.xacro files. All these elements are defined as macro:xacros -->
 
     <!-- Import rbvogui base elements-->
-    <xacro:include filename="$(find robot_description)/urdf/bases/rbvogui_base.urdf.xacro" />
+    <xacro:include filename="$(find robotnik_description)/urdf/bases/rbvogui_base.urdf.xacro" />
 
     <!-- Import rbvogui wheels -->
-    <xacro:include filename="$(find robot_description)/urdf/wheels/motor_wheel/rbvogui_motor_wheel.urdf.xacro" />
+    <xacro:include filename="$(find robotnik_description)/urdf/wheels/motor_wheel/rbvogui_motor_wheel.urdf.xacro" />
 
     <!-- Import all available sensors -->
     <xacro:include filename="$(find robotnik_sensors)/urdf/all_sensors.urdf.xacro" />
@@ -95,8 +95,8 @@
         <!-- UR-5 ARM -->
         <xacro:if value="${load_kinematics_file}">
             <xacro:ur5_robot prefix="${prefix}arm_" 
-                    kinematics_parameters_file="$(find robot_description)/robot_control/config/calibration/ur5_calibration.yaml"
-                    joint_limits_parameters_file="$(find robot_description)/robot_control/config/calibration/ur5_joint_limits.yaml">
+                    kinematics_parameters_file="$(find robotnik_description)/robot_control/config/calibration/ur5_calibration.yaml"
+                    joint_limits_parameters_file="$(find robotnik_description)/robot_control/config/calibration/ur5_joint_limits.yaml">
             </xacro:ur5_robot>
 
             <joint name="${prefix}arm_base_joint" type="fixed">

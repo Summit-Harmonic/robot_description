@@ -10,24 +10,24 @@
 	<!-- First we import all posible elements defined in the urdf.xacro files. All these elements are defined as macro:xacros -->
 
 	<!-- Import RB1 base elements -->
-	<xacro:include filename="$(find robot_description)/urdf/bases/rb1_base_v3.urdf.xacro" />
+	<xacro:include filename="$(find robotnik_description)/urdf/bases/rb1_base_v3.urdf.xacro" />
 	<!-- v3 name from engineering department -->
 
 	<!-- Include UR-3 ARM -->
 	<xacro:include filename="$(find ur_description)/urdf/ur3.urdf.xacro" />
 
 	<!-- Import RB1 wheels -->
-	<xacro:include filename="$(find robot_description)/urdf/wheels/rubber_wheel/rubber_wheel_150.urdf.xacro" />
-	<xacro:include filename="$(find robot_description)/urdf/wheels/omni_wheel/rb1_base_omni_wheel.urdf.xacro" />
+	<xacro:include filename="$(find robotnik_description)/urdf/wheels/rubber_wheel/rubber_wheel_150.urdf.xacro" />
+	<xacro:include filename="$(find robotnik_description)/urdf/wheels/omni_wheel/rb1_base_omni_wheel.urdf.xacro" />
 
 	<!-- Import all available sensors -->
 	<xacro:include filename="$(find robotnik_sensors)/urdf/all_sensors.urdf.xacro" />
 
 	<!-- Import Gazebo Stuff -->
-	<xacro:include filename="$(find robot_description)/urdf/structures/common.gazebo.xacro" />
+	<xacro:include filename="$(find robotnik_description)/urdf/structures/common.gazebo.xacro" />
 
 	<!-- Import Torso -->
-	<xacro:include filename="$(find robot_description)/urdf/arms/ur/torso_ur3.urdf.xacro"/>
+	<xacro:include filename="$(find robotnik_description)/urdf/arms/ur/torso_ur3.urdf.xacro"/>
 
 
 	<!-- ***************** -->
@@ -117,7 +117,7 @@
 	<xacro:ur3_robot prefix="$(arg prefix)right_arm_" joint_limited="true"
 		shoulder_pan_lower_limit="${-pi}" shoulder_pan_upper_limit="${pi}"
 		wrist_3_lower_limit="${-pi}" wrist_3_upper_limit="${pi}"
-		kinematics_file="${load_yaml('$(find robot_description)/robot_control/config/ur3_calibration.yaml')}">
+		kinematics_file="${load_yaml('$(find robotnik_description)/robot_control/config/ur3_calibration.yaml')}">
 	</xacro:ur3_robot>
 
 	<joint name="$(arg prefix)right_arm_base_joint" type="fixed">
@@ -129,7 +129,7 @@
 	<xacro:ur3_robot prefix="$(arg prefix)left_arm_" joint_limited="true"
 		shoulder_pan_lower_limit="${-pi}" shoulder_pan_upper_limit="${pi}"
 		wrist_3_lower_limit="${-pi}" wrist_3_upper_limit="${pi}"
-		kinematics_file="${load_yaml('$(find robot_description)/robot_control/config/ur3_calibration.yaml')}">
+		kinematics_file="${load_yaml('$(find robotnik_description)/robot_control/config/ur3_calibration.yaml')}">
 	</xacro:ur3_robot>
 
 	<joint name="$(arg prefix)left_arm_base_joint" type="fixed">

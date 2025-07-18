@@ -10,7 +10,7 @@
   </xacro:macro>
 
   <xacro:macro name="rubber_wheel" params="prefix parent *origin reflect hq rubber_wheel_radius:=0.115 rubber_wheel_width:=0.15 rubber_wheel_mass:=6.5
-                                          mesh_file:=robot_description/meshes/wheels/rubber_wheel/rubber_wheel_right">
+                mesh_file:=robotnik_description/meshes/wheels/rubber_wheel/rubber_wheel_right">
 
 <!--WHEEL TIRE -->
     <joint name="${prefix}wheel_joint" type="continuous">
@@ -19,7 +19,7 @@
       <xacro:insert_block name="origin" />
       <axis xyz="0 1 0" />
       <limit effort="100" velocity="100"/>
-			<joint_properties damping="0.0" friction="0.0"/>
+			<joint_properties damping="0.5" friction="0.5"/>
     </joint>
 
     <link name="${prefix}wheel_link">
@@ -55,7 +55,7 @@
           </xacro:if>        
           <geometry>
             <cylinder length="${rubber_wheel_width}" radius="${rubber_wheel_radius}" />
-						<!-- <mesh filename="package://${mesh_file}.stl" /> -->
+						<!-- <mesh filename="package://${mesh_file}.dae" /> -->
         </geometry>
       </collision>
       <inertial>
@@ -64,6 +64,15 @@
         <xacro:cylinder_inertia  m="${rubber_wheel_mass}" r="${rubber_wheel_radius}" h="${rubber_wheel_width}" />
       </inertial>
     </link>
+
+    <gazebo reference="${prefix}wheel_link">
+      <mu1>1.6</mu1>
+      <mu2>3.6</mu2>
+      <kp>1000000.0</kp>
+      <kd>100.0</kd>
+      <minDepth>0.0001</minDepth>
+      <maxVel>100.0</maxVel>
+    </gazebo>
 
     <!-- Transmission is important to link the joints and the controller (see summit_xl_control/config/summit_xl_control.yaml)-->
     <transmission name="${prefix}wheel_joint_trans">

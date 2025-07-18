@@ -8,14 +8,14 @@
   <!-- First we import all posible elements defined in the urdf.xacro files. All these elements are defined as macro:xacros -->
 
   <!-- Import summit XL base elements -->
-  <xacro:include filename="$(find robot_description)/urdf/bases/rbkairos_plus_base.urdf.xacro" />
+  <xacro:include filename="$(find robotnik_description)/urdf/bases/rbkairos_plus_base.urdf.xacro" />
 
   <!-- Include UR-16 ARM -->
   <!--ur10e parameters files -->
-  <xacro:arg name="joint_limit_params" default="$(find robot_description)/robot_control/config/ur/ur16e/joint_limits.yaml"/>
-  <xacro:arg name="kinematics_params" default="$(find robot_description)/robot_control/config/ur/ur16e/default_kinematics.yaml"/>
-  <xacro:arg name="physical_params" default="$(find robot_description)/robot_control/config/ur/ur16e/physical_parameters.yaml"/>
-  <xacro:arg name="visual_params" default="$(find robot_description)/robot_control/config/ur/ur16e/visual_parameters.yaml"/>
+  <xacro:arg name="joint_limit_params" default="$(find robotnik_description)/robot_control/config/ur/ur16e/joint_limits.yaml"/>
+  <xacro:arg name="kinematics_params" default="$(find robotnik_description)/robot_control/config/ur/ur16e/default_kinematics.yaml"/>
+  <xacro:arg name="physical_params" default="$(find robotnik_description)/robot_control/config/ur/ur16e/physical_parameters.yaml"/>
+  <xacro:arg name="visual_params" default="$(find robotnik_description)/robot_control/config/ur/ur16e/visual_parameters.yaml"/>
   <!--common parameters -->
   <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface" />
   <xacro:arg name="safety_limits" default="false" doc="If True, enable the safety limits controller"/>
@@ -25,13 +25,13 @@
   <!-- import main macro -->
   <xacro:include filename="$(find ur_description)/urdf/inc/ur16e_macro.xacro" />
 
-  <xacro:include filename="$(find robot_description)/urdf/arms/ur/extension_ur16e.urdf.xacro" />
+  <xacro:include filename="$(find robotnik_description)/urdf/arms/ur/extension_ur16e.urdf.xacro" />
 
 
   <!-- Import summit XL wheels -->
-  <xacro:include filename="$(find robot_description)/urdf/wheels/omni_wheel/omni_wheel.urdf.xacro" />
-  <xacro:include filename="$(find robot_description)/urdf/wheels/rubber_wheel/rubber_wheel.urdf.xacro" />
-  <xacro:include filename="$(find robot_description)/urdf/structures/rbkairos_chassis/structure_hokuyo.urdf.xacro" />
+  <xacro:include filename="$(find robotnik_description)/urdf/wheels/omni_wheel/omni_wheel.urdf.xacro" />
+  <xacro:include filename="$(find robotnik_description)/urdf/wheels/rubber_wheel/rubber_wheel.urdf.xacro" />
+  <xacro:include filename="$(find robotnik_description)/urdf/structures/rbkairos_chassis/structure_hokuyo.urdf.xacro" />
 
   <!-- Import all available sensors -->
   <xacro:include filename="$(find robotnik_sensors)/urdf/all_sensors.urdf.xacro" />

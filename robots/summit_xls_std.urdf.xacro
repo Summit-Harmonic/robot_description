@@ -6,9 +6,9 @@
   <!-- ***************** -->
 
   <!-- Import RB1 base elements (base + wheels) -->
-  <xacro:include filename="$(find robot_description)/urdf/bases/summit_xl_base.urdf.xacro"/>
-  <xacro:include filename="$(find robot_description)/urdf/wheels/rubber_wheel/rubber_wheel.urdf.xacro"/>
-  <xacro:include filename="$(find robot_description)/urdf/structures/sensor_support/gps_mast.urdf.xacro"/>
+  <xacro:include filename="$(find robotnik_description)/urdf/bases/summit_xl_base.urdf.xacro"/>
+  <xacro:include filename="$(find robotnik_description)/urdf/wheels/rubber_wheel/rubber_wheel.urdf.xacro"/>
+  <xacro:include filename="$(find robotnik_description)/urdf/structures/sensor_support/gps_mast.urdf.xacro"/>
 
   <!-- Import all available sensors -->
   <xacro:include filename="$(find robotnik_sensors)/urdf/all_sensors.urdf.xacro"/>
@@ -93,9 +93,9 @@
   </xacro:sensor_imu>
 
   <!-- Gazebo ros control plugins -->
-  <xacro:arg name="config_controllers" default="$(find robot_description)/config/summit_xl_base.yaml"/>
+  <xacro:arg name="config_controllers" default="$(find robotnik_description)/config/summit_xl_base.yaml"/>
   <xacro:arg name="update_rate" default="100"/>
-  <xacro:include filename="$(find robot_description)/urdf/ros2_control.urdf.xacro"/>
+  <xacro:include filename="$(find robotnik_description)/urdf/ros2_control.urdf.xacro"/>
   <xacro:ros2_control/>
 </robot>
 
