@@ -50,12 +50,12 @@
             <origin xyz="0 0 0" rpy="0 0 0" />
           </xacro:unless>
           <xacro:if value="${reflect}">
-            <origin xyz="0 0 0" rpy="${M_PI/2} 0 0" />
-            <!-- <origin xyz="0 0 0" rpy="${M_PI} 0 0" /> -->
+            <!-- <origin xyz="0 0 0" rpy="${M_PI/2} 0 0" /> -->
+            <origin xyz="0 0 0" rpy="${M_PI} 0 0" />
           </xacro:if>        
           <geometry>
-            <cylinder length="${rubber_wheel_width}" radius="${rubber_wheel_radius}" />
-						<!-- <mesh filename="package://${mesh_file}.dae" /> -->
+            <!-- <cylinder length="${rubber_wheel_width}" radius="${rubber_wheel_radius}" /> -->
+						<mesh filename="package://${mesh_file}.dae" />
         </geometry>
       </collision>
       <inertial>
@@ -65,22 +65,22 @@
       </inertial>
     </link>
 
-    <gazebo reference="${prefix}wheel_link">
-      <mu1>1.6</mu1>
-      <mu2>3.6</mu2>
+    <!-- <gazebo reference="${prefix}wheel_link">
+      <mu1>10.6</mu1>
+      <mu2>30.6</mu2>
       <kp>1000000.0</kp>
-      <kd>100.0</kd>
+      <kd>1.0</kd>
       <minDepth>0.0001</minDepth>
-      <maxVel>100.0</maxVel>
-    </gazebo>
+      <maxVel>10000.0</maxVel>
+    </gazebo> -->
 
     <!-- Transmission is important to link the joints and the controller (see summit_xl_control/config/summit_xl_control.yaml)-->
     <transmission name="${prefix}wheel_joint_trans">
       <plugin>transmission_interface/SimpleTransmission</plugin>
-      <actuator name="${prefix}wheel_joint_motor" role="actuator1"/>
-      <joint name="${prefix}wheel_joint" role="joint1">
+      <actuator name="${prefix}wheel_joint_motor" role="${prefix}wheel_joint_motor"/>
+      <joint name="${prefix}wheel_joint" role="${prefix}wheel_joint">
         <mechanicalReduction>1</mechanicalReduction>
-        <motorTorqueConstant>20</motorTorqueConstant>
+        <!-- <motorTorqueConstant>20</motorTorqueConstant> -->
       </joint>
      </transmission>
   </xacro:macro>
