@@ -81,11 +81,11 @@
   <xacro:sensor_stereolabs_zed2 node_namespace="$(arg robot_ns)" frame_prefix="$(arg prefix)front_camera_" parent="$(arg prefix)base_link" simulation="true">
       <origin xyz="0.324 0.012 0.172" rpy="0 0 0"/>
   </xacro:sensor_stereolabs_zed2>
-  <xacro:structure_mastil_gps prefix="$(arg prefix)gps_" parent="$(arg prefix)base_link">
+  <xacro:structure_mastil_gps prefix="$(arg prefix)gps_base" parent="$(arg prefix)base_link">
     <origin xyz="-0.24 0.095 0.25" rpy="0 0 0"/>
   </xacro:structure_mastil_gps>
-  <xacro:sensor_gps  node_namespace="$(arg robot_ns)" frame_prefix="$(arg prefix)gps_" parent="$(arg prefix)base_link" simulation="true">
-    <origin xyz="-0.24 0.095 0.625" rpy="0 0 0"/>
+  <xacro:sensor_gps  node_namespace="$(arg robot_ns)" frame_prefix="$(arg prefix)gps_" parent="$(arg prefix)gps_base_link" simulation="true">
+    <origin xyz="0 0 0.375" rpy="0 0 0"/>
   </xacro:sensor_gps>
   <xacro:sensor_imu ns="$(arg robot_ns)" prefix="$(arg prefix)imu" parent="$(arg prefix)base_link">
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
